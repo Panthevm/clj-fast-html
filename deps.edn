@@ -1,0 +1,27 @@
+{:paths ["src" "target/classes"]
+ :deps  {org.clojure/clojure {:mvn/version "1.11.3"}}
+
+ :aliases
+ {:repl
+  {:extra-deps
+   {cider/cider-nrepl                        {:mvn/version "0.49.0"}
+    com.clojure-goes-fast/clj-async-profiler {:mvn/version "1.2.2"}
+    criterium/criterium                      {:mvn/version "0.4.6"}
+    hiccup/hiccup                            {:mvn/version "2.0.0-RC3"}}
+   :jvm-opts
+   ["-XX:-OmitStackTraceInFastThrow"
+    "-Djdk.attach.allowAttachSelf"]
+   :main-opts
+   ["-m" "nrepl.cmdline"
+    "-m" "[cider.nrepl/cider-middleware]"]}
+
+  :test
+  {:extra-paths ["test"]
+   :extra-deps  {com.health-samurai/matcho {:mvn/version "0.3.11"}}}
+
+  :bench
+  {:extra-paths ["classes"]
+   :extra-deps {jmh-clojure/task {:mvn/version "0.1.1"}
+                hiccup/hiccup    {:mvn/version "2.0.0-RC3"}}
+   :ns-default jmh.task
+   :exec-fn jmh.task/run}}}

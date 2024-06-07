@@ -1,0 +1,526 @@
+{:benchmarks
+ [{:name :to-html-string     :fn clj-fast-html.core/to-html-string :args [:param/examples]}
+  {:name :hiccup-2-0-0-RC3   :fn hiccup.compiler/render-html :args [:param/examples]}]
+ :params
+ {:examples
+  [[:body
+    [:div
+     {:data-collapse "none",
+      :data-animation "default",
+      :data-duration "400",
+      :data-contain "1",
+      :class "w-nav clj-navbar"}
+     [:div
+      {:class "w-container"}
+      [:a
+       {:href "/index", :class "w-nav-brand w-clearfix clj-logo-container"}
+       [:img
+        {:width "60",
+         :src "/images/clojure-logo-120b.png",
+         :class "clj-logo",
+         :alt "Clojure logo"}]
+       [:div {:class "clj-logo-text"} "Clojure"]]
+      [:nav
+       {:role "navigation", :class "w-nav-menu clj-nav-menu"}
+       [:a
+        {:href "/about/rationale",
+         :class "w-nav-link clj-nav-link",
+         :style "max-width: 1070px;"}
+        "Overview"]
+       [:a
+        {:href "/reference/documentation",
+         :class "w-nav-link clj-nav-link",
+         :style "max-width: 1070px;"}
+        "Reference‍"]
+       [:a
+        {:href "/api/api",
+         :class "w-nav-link clj-nav-link",
+         :style "max-width: 1070px;"}
+        "API"]
+       [:a
+        {:href "/releases/downloads",
+         :class "w-nav-link clj-nav-link",
+         :style "max-width: 1070px;"}
+        "Releases"]
+       [:a
+        {:href "/guides/guides",
+         :class "w-nav-link clj-nav-link",
+         :style "max-width: 1070px;"}
+        "Guides"]
+       [:a
+        {:href "/community/success_stories",
+         :class "w-nav-link clj-nav-link",
+         :style "max-width: 1070px;"}
+        "Community"]
+       [:a
+        {:href "/dev/dev",
+         :class "w-nav-link clj-nav-link",
+         :style "max-width: 1070px;"}
+        "Dev"]
+       [:a
+        {:href "/news/news",
+         :class "w-nav-link clj-nav-link",
+         :style "max-width: 1070px;"}
+        "News"]
+       [:a
+        {:href "#",
+         :data-ix "search-click-trigger",
+         :class "w-nav-link clj-nav-link clj-nav-search",
+         :style "transition: all; max-width: 1070px;"}
+        ""]]
+      [:div
+       {:class "w-nav-button clj-menu-button"}
+       [:div {:class "w-icon-nav-menu"}]]]
+     [:div {:class "w-nav-overlay", :data-wf-ignore ""}]]
+    [:div
+     {:data-ix "hide-search",
+      :class "w-section clj-search-section",
+      :style
+      "transition: all; transform: translateX(0px) translateY(-79px);"}
+     [:div
+      {:class "w-container"}
+      [:div
+       {:class "w-form clj-search-form-wrapper"}
+       [:form
+        {:id "wf-form-Search-Form",
+         :name "wf-form-Search-Form",
+         :action "https://duckduckgo.com/",
+         :method "get",
+         :onsubmit "searchClj(this)"}
+        [:div
+         {:class "w-row"}
+         [:div
+          {:class "w-col w-col-6 w-col-small-6"}
+          [:input
+           {:id "hiddenSearch",
+            :type "hidden",
+            :name "sites",
+            :value "www.clojure.org"}]
+          [:input
+           {:name "q",
+            :id "q",
+            :type "text",
+            :placeholder "Search clojure.org reference, guides, and API",
+            :title "Search text",
+            :autofocus "autofocus",
+            :class "w-input clj-search-input"}]]
+         [:div
+          {:class "w-col w-col-3 w-col-small-3 clj-search-type"}
+          [:select
+           {:name "searchType",
+            :id "searchType",
+            :class "w-select clj-search-type"}
+           [:option {:value "www.clojure.org"} "clojure.org"]
+           [:option {:value "ask.clojure.org"} "ask.clojure.org"]]]
+         [:div
+          {:class "w-col w-col-3 w-col-small-3"}
+          [:input
+           {:type "submit",
+            :value "Search", 
+            :class "w-button clj-search-submit"}]]]]]]]
+    [:div
+     {:class "w-section clj-home-header"}
+     [:div
+      {:class "w-container"}
+      [:div
+       {:class "w-row"}
+       [:div
+        {:class "w-col w-col-8"}
+        [:div
+         {:class "clj-header-message"}
+         "Clojure is a"
+         [:span
+          {:class "clj-header-message-highlight"}
+          "robust, practical, and fast"]
+         "programming language with a set of useful features that together form a"
+         [:span
+          {:class "clj-header-message-highlight"}
+          "simple, coherent, and powerful tool"]
+         "."]]
+       [:div
+        {:class "w-col w-col-4"}
+        [:div
+         {:class "clj-download-button-container"}
+         [:a
+          {:href "guides/getting_started",
+           :class "w-button clj-download-button"} 
+          "Get Started!"]]]]]]
+    [:div
+     {:class "w-section clj-home-intro-section"}
+     [:div
+      {:class "w-container"}
+      [:div
+       {:class "w-row"}
+       [:div
+        {:class "w-col w-col-8"}
+        [:div
+         [:div
+          {:class "clj-intro-message"}
+          [:h2 "The Clojure Programming Language"]
+          [:p
+           "Clojure is a dynamic, general-purpose programming language, combining the approachability and interactive development of a scripting language with an efficient and robust infrastructure for multithreaded programming. Clojure is a compiled language, yet remains completely dynamic – every feature supported by Clojure is supported at runtime. Clojure provides easy access to the Java frameworks, with optional type hints and type inference, to ensure that calls to Java can avoid reflection."]
+          [:p
+           "Clojure is a dialect of Lisp, and shares with Lisp the code-as-data philosophy and a powerful macro system. Clojure is predominantly a functional programming language, and features a rich set of immutable, persistent data structures. When mutable state is needed, Clojure offers a software transactional memory system and reactive Agent system that ensure clean, correct, multithreaded designs."]
+          [:p
+           "I hope you find Clojure&#39;s combination of facilities elegant, powerful, practical and fun to use."]
+          [:p "Rich Hickey" [:br] "author of Clojure"]]]]
+       [:div
+        {:class "w-col w-col-4"}
+        [:div
+         {:class "clj-learn-more"}
+         [:h3 {:class "clj-learn-more-heading"} "Learn More"]
+         [:a
+          {:href "about/rationale",
+           :class "w-inline-block clj-learn-more-item"}
+          [:h4 {:class "clj-learn-more-item-heading"} "Rationale"]
+          [:p
+           {:class "clj-learn-more-detail"}
+           "A brief overview of Clojure and the features it includes"]]
+         [:a
+          {:href "guides/getting_started",
+           :class "w-inline-block clj-learn-more-item"}
+          [:h4 {:class "clj-learn-more-item-heading"} "Getting Started"]
+          [:p
+           {:class "clj-learn-more-detail"}
+           "Resources for getting Clojure up and running"]]
+         [:a
+          {:href "reference/documentation",
+           :class "w-inline-block clj-learn-more-item"}
+          [:h4 {:class "clj-learn-more-item-heading"} "Reference"]
+          [:p
+           {:class "clj-learn-more-detail"}
+           "Grand tour of all that Clojure has to offer"]]
+         [:a
+          {:href "guides/guides",
+           :class "w-inline-block clj-learn-more-item"}
+          [:h4 {:class "clj-learn-more-item-heading"} "Guides"]
+          [:p
+           {:class "clj-learn-more-detail"}
+           "Walkthroughs to help you learn along the way"]]
+         [:a
+          {:href "community/resources",
+           :class "w-inline-block clj-learn-more-item"}
+          [:h4 {:class "clj-learn-more-item-heading"} "Community"]
+          [:p
+           {:class "clj-learn-more-detail"}
+           "We have a vibrant, flourishing  community. Join us!"]]
+         [:a
+          {:href "https://www.youtube.com/user/ClojureTV/videos"}
+          [:img
+           {:src "/images/clojuretv.png", :alt "Clojure TV logo"}]]]]]]]
+    [:div
+     {:class "w-section clj-home-companies-section"}
+     [:div
+      {:class "w-container"}
+      [:div
+       [:h3
+        {:class "clj-home-companies-heading"}
+        "Companies Succeeding with Clojure"]]
+      [:div
+       {:class "w-row"}
+       [:div
+        {:class "w-col w-col-4"}
+        [:div
+         {:class "clj-home-company clj-home-company-walmart"}
+         [:blockquote
+          {:class "clj-home-company-quote"}
+          "“Our Clojure system just handled its first Walmart black Friday and came out without a scratch.”"]
+         [:div
+          {:class "clj-home-company-attribution"}
+          "Anthony Marcar, Senior Architect"
+          [:br]
+          "Walmart Labs"]]]
+       [:div
+        {:class "w-col w-col-4"}
+        [:div
+         {:class "clj-home-company clj-home-company-puppet"}
+         [:blockquote
+          {:class "clj-home-company-quote"}
+          "“Clojure is a functional programming language from top to bottom. This means that code written in Clojure is very modular, composable, reusable and easy to reason about.”"]
+         [:div
+          {:class "clj-home-company-attribution"}
+          "Chris Price, Software Engineer"
+          [:br]
+          "Puppet Labs"]]]
+       [:div
+        {:class "w-col w-col-4"}
+        [:div
+         {:class "clj-home-company clj-home-company-thoughtworks"}
+         [:blockquote
+          {:class "clj-home-company-quote"}
+          "“We discussed the existing Clojure community, the maturity of the language itself and the momentum we saw in the industry. Companies are seeing speed to market deliveries ... based on Clojure.”"]
+         [:div
+          {:class "clj-home-company-attribution"}
+          "Dave Elliman, Head of Technology"
+          [:br]
+          "ThoughtWorks"]]]]
+      [:div
+       {:class "clj-home-company-text"}
+       [:p
+        "Read more about Clojure"
+        [:a
+         {:class "clj-home-company-link",
+          :href "community/success_stories"}
+         "success stories"]
+        ", how the"
+        [:a
+         {:class "clj-home-company-link",
+          :href "community/community_stories"}
+         "community"]
+        "uses Clojure, and find"
+        [:a
+         {:class "clj-home-company-link", :href "community/companies"}
+         "companies using Clojure"] 
+        "."]]]]
+    [:div
+     {:class "w-section clj-home-features-section"}
+     [:div
+      {:class "w-container"}
+      [:div
+       {:class "clj-home-features-intro"}
+       [:h3 "Features"]
+       [:p
+        "Clojure has a set of useful features that together form a simple, coherent, and powerful tool."]]
+      [:div
+       {:class "w-row"}
+       [:div
+        {:class "w-col w-col-6"}
+        [:div
+         {:class "clj-home-feature-item"}
+         [:h4 "Dynamic Development"]
+         [:p
+          "Clojure is a dynamic environment you can interact with. Almost all of the language constructs are reified, and thus can be examined and changed. You can grow your program, with data loaded, adding features, fixing bugs, testing, in an unbroken stream."]]]
+       [:div
+        {:class "w-col w-col-6"}
+        [:div
+         {:class "clj-home-feature-item"}
+         [:h4 "Functional Programming"]
+         [:p
+          "Clojure provides the tools to avoid mutable state, provides functions as first-class objects, and emphasizes recursive iteration instead of side-effect based looping. Clojure is impure, yet stands behind the philosophy that programs that are more functional are more robust."]]]]
+      [:div
+       {:class "w-row"}
+       [:div
+        {:class "w-col w-col-6"}
+        [:div
+         {:class "clj-home-feature-item"}
+         [:h4 "LISP"]
+         [:p
+          "Clojure is a member of the Lisp family of languages. Many of the features of Lisp have made it into other languages, but Lisp&#39;s approach to code-as-data and its macro system still set it apart. Additionally, Clojure’s maps, sets, and vectors are as first class in Clojure as lists are in Lisp."]]]
+       [:div
+        {:class "w-col w-col-6"}
+        [:div
+         {:class "clj-home-feature-item"}
+         [:h4 "Runtime Polymorphism"]
+         [:p
+          "Systems that utilize runtime polymorphism are easier to change and extend. Clojure offers simple, powerful and flexible mechanisms for runtime polymorphism. Clojure’s protocols and datatypes features add mechanisms for abstraction and data structure definition with no compromises vs the facilities of the host platform."]]]]
+      [:div
+       {:class "w-row"}
+       [:div
+        {:class "w-col w-col-6"}
+        [:div
+         {:class "clj-home-feature-item"}
+         [:h4 "Concurrent Programming"]
+         [:p
+          "Clojure simplifies multi-threaded programming in several ways. Because the core data structures are immutable, they can be shared readily between threads. Clojure, being a practical language, allows state to change but provides mechanism to ensure that, when it does so, it remains consistent, while alleviating developers from having to avoid conflicts manually using locks etc."]]]
+       [:div
+        {:class "w-col w-col-6"}
+        [:div
+         {:class "clj-home-feature-item"}
+         [:h4 "Hosted on the JVM"]
+         [:p
+          "Clojure is designed to be a hosted language, sharing the JVM type system, GC, threads etc. All functions are compiled to JVM bytecode. Clojure is a great Java library consumer, offering the dot-target-member notation for calls to Java. Clojure supports the dynamic implementation of Java interfaces and classes."]]]]]]
+    [:div
+     {:class "w-section clj-home-updates-section"}
+     [:div
+      {:class "w-container"}
+      [:div
+       {:class "w-row"}
+       [:div
+        {:class "w-col w-col-6"}
+        [:div
+         {:class "clj-home-updates-container"}
+         [:h3 "News"]
+         [:ul
+          {:class "w-list-unstyled clj-home-updates-list"}
+          [:li
+           [:span {:class "clj-home-updates-date"} "2024-06-08"]
+           [:a
+            {:href "/news/2024/06/08/deref",
+             :class "clj-home-updates-link"}
+            "Clojure Deref (June 8, 2024)"]]
+          [:li
+           [:span {:class "clj-home-updates-date"} "2024-06-07"]
+           [:a
+            {:href "/news/2024/06/07/conj-cfp",
+             :class "clj-home-updates-link"}
+            "Clojure/conj 2024 CFP"]]
+          [:li
+           [:span {:class "clj-home-updates-date"} "2024-06-01"]
+           [:a
+            {:href "/news/2024/06/01/deref",
+             :class "clj-home-updates-link"}
+            "Clojure Deref (June 1, 2024)"]]
+          [:li
+           [:span {:class "clj-home-updates-date"} "2024-05-30"]
+           [:a
+            {:href "/news/2024/05/30/clojure-conj-registration",
+             :class "clj-home-updates-link"}
+            "Clojure/conj 2024 Registration"]]
+          [:li
+           [:span {:class "clj-home-updates-date"} "2024-05-24"]
+           [:a
+            {:href "/news/2024/05/24/deref",
+             :class "clj-home-updates-link"}
+            "Clojure Deref (May 24, 2024)"]]]]]
+       [:div
+        {:class "w-col w-col-6"}
+        [:div
+         {:class "clj-home-updates-container"}
+         [:h3 "Upcoming Events"]
+         [:ul
+          {:class "w-list-unstyled clj-home-updates-list"}
+          [:li
+           [:span {:class "clj-home-updates-date"} "2024-06-13"]
+           [:a
+            {:href
+             "/events/2024/los-angeles-clojure-meetup-telemere-1117741427",
+             :class "clj-home-updates-link"}
+            "Los Angeles Clojure Meetup: Telemere"]]
+          [:li
+           [:span {:class "clj-home-updates-date"} "2024-06-16"]
+           [:a
+            {:href "/events/2024/visual-tools-meeting-26-1506433636",
+             :class "clj-home-updates-link"}
+            "Visual-tools meeting 26"]]
+          [:li
+           [:span {:class "clj-home-updates-date"} "2024-06-29"]
+           [:a
+            {:href "/events/2024/data-recur-meeting-5-datajure-1325176135",
+             :class "clj-home-updates-link"}
+            "Data-recur meeting 5: Datajure"]]
+          [:li
+           [:span {:class "clj-home-updates-date"} "2024-09-18"]
+           [:a
+            {:href "/events/2024/heart-of-clojure--1973320747",
+             :class "clj-home-updates-link"}
+            "Heart of Clojure"]]
+          [:li
+           [:span {:class "clj-home-updates-date"} "2024-10-23"]
+           [:a
+            {:href "/events/2024/clojure-conj-2024-2144082469",
+             :class "clj-home-updates-link"} 
+            "Clojure/Conj 2024"]]]]]]]]
+    [:div
+     {:class "w-section clj-home-support"}
+     [:div
+      {:class "w-container"}
+      [:div
+       {:class "w-row"}
+       [:div
+        {:class "w-col w-col-8"}
+        [:div
+         [:h3 "Nubank"]
+         [:p
+          [:a {:href "https://international.nubank.com.br/"} "Nubank"]
+          "is one of the world&#39;s largest digital banking platforms, serving over 65 million customers across Brazil, Mexico, and Colombia. From its start, Nu has had a spectacular success story with Clojure, running mission-critical software at scale. In 2020, the company acquired Cognitect, the consultancy behind Clojure and the"
+          [:a {:href "https://www.datomic.com/"} "Datomic"]
+          "database."]
+         [:p
+          "Through the acquisition, Nubank incorporated a world-class team to assist developers in translating Clojure&#39;s ideas into business agility and leverage the company&#39;s mission to fight complexity and empower people. Currently, Nu is a key corporate sponsor of Clojure and ClojureScript."]
+         [:p
+          "For more information about how Nubank builds products and teams, visit"
+          [:a
+           {:href "https://building.nubank.com.br/"}
+           "building.nubank.com.br"]
+          "."]]]
+       [:div
+        {:class "w-col w-col-4 clj-home-support-logo-container"}
+        [:img
+         {:class "clj-home-support-logo", :src "/images/nulogo.png"}]]]]]
+    [:div
+     {:class "w-section clj-footer"}
+     [:div
+      {:class "w-container clj-footer-links-container"}
+      [:div
+       {:class "w-row"}
+       [:div
+        {:class "w-col w-col-3 w-col-small-6 w-col-tiny-6"}
+        [:h6 {:class "clj-footer-heading"} "Community"]
+        [:a
+         {:href "/community/resources", :class "clj-footer-link"}
+         "Resources"]
+        [:a
+         {:href "/community/contributing", :class "clj-footer-link"}
+         "Contributing"]
+        [:a
+         {:href "/community/companies", :class "clj-footer-link"}
+         "Companies"]
+        [:a
+         {:href "/community/contributing_site", :class "clj-footer-link"}
+         "Site"]
+        [:h6 {:class "clj-footer-heading"} "Legal"]
+        [:a
+         {:href "/community/license", :class "clj-footer-link"}
+         "License"]
+        [:a {:href "/privacy", :class "clj-footer-link"} "Privacy Policy"]]
+       [:div
+        {:class "w-col w-col-3 w-col-small-6 w-col-tiny-6"}
+        [:h6 {:class "clj-footer-heading"} "Documentation"]
+        [:a
+         {:href "/about/rationale", :class "clj-footer-link"}
+         "Overview"]
+        [:a
+         {:href "/reference/documentation", :class "clj-footer-link"}
+         "Reference"]
+        [:a {:href "/api/api", :class "clj-footer-link"} "API"]
+        [:a {:href "/guides/guides", :class "clj-footer-link"} "Guides"]
+        [:a
+         {:href "/community/libraries", :class "clj-footer-link"}
+         "Libraries &amp; Tools"]]
+       [:div
+        {:class "w-col w-col-3 w-col-small-6 w-col-tiny-6"}
+        [:h6 {:class "clj-footer-heading"} "Updates"]
+        [:a {:href "/news/news", :class "clj-footer-link"} "News"]
+        [:a {:href "/community/events", :class "clj-footer-link"} "Events"]
+        [:h6 {:class "clj-footer-heading"} "ETC"]
+        [:a
+         {:href "https://www.youtube.com/user/ClojureTV",
+          :class "clj-footer-link"}
+         "ClojureTV"]
+        [:a {:href "/community/books", :class "clj-footer-link"} "Books"]
+        [:a {:href "/community/swag", :class "clj-footer-link"} "Swag"]]
+       [:div
+        {:class "w-col w-col-3 w-col-small-6 w-col-tiny-6"}
+        [:h6 {:class "clj-footer-heading"} "Code"]
+        [:a
+         {:href "/releases/downloads", :class "clj-footer-link"}
+         "Releases"]
+        [:a
+         {:href "https://github.com/clojure/clojure/",
+          :class "clj-footer-link"}
+         "Source"]
+        [:a
+         {:href "http://clojurescript.org", :class "clj-footer-link"}
+         "ClojureScript"]
+        [:a
+         {:href "/about/clojureclr", :class "clj-footer-link"}
+         "ClojureCLR"]]]]
+     [:div
+      {:class "w-container clj-footer-legal-container"}
+      [:div
+       {:class "w-clearfix clj-footer-legal"}
+       [:div {:class "clj-footer-logo"}]
+       [:div
+        {:class "clj-footer-legal-links"}
+        [:div
+         {:class "clj-footer-copyright"}
+         "Copyright 2008-2022 Rich Hickey |"
+         [:a
+          {:class "clj-footer-sub-link", :href "/privacy"}
+          "Privacy Policy"]
+         [:br]
+         "Logo &amp; site design by Tom Hickey"]
+        [:div
+         {:class "clj-footer-designed-by"} 
+         "Published 2024-06-08" 
+         [:br]]]]]]]]}}
