@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>jar</packaging>
+  <groupId>io.github.panthevm</groupId>
+  <artifactId>clj-fast-html</artifactId>
+  <version>1.0.1</version>
+  <name>clj-fast-html</name>
+  <description>The clojure HTML compiler</description>
+  <licenses>
+    <license>
+      <name>MIT License</name>
+      <url>https://mit-license.org/</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <dependencies>
+    <dependency>
+      <groupId>org.clojure</groupId>
+      <artifactId>clojure</artifactId>
+      <version>1.11.3</version>
+    </dependency>
+  </dependencies>
+  <repositories>
+    <repository>
+      <id>clojars</id>
+      <url>https://repo.clojars.org/</url>
+    </repository>
+  </repositories>
+  <developers>
+    <developer>
+      <name>Ivan Bagrov</name>
+    </developer>
+  </developers>
+  <scm>
+    <url>https://github.com/Panthevm/clj-fast-html</url>
+    <connection>scm:git:git://github.com/Panthevm/clj-fast-html.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com/Panthevm/clj-fast-html.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
+  <build>
+    <sourceDirectory>src</sourceDirectory>
+  </build>
+  <distributionManagement>
+    <repository>
+      <id>clojars</id>
+      <name>Clojars repository</name>
+      <url>https://clojars.org/repo</url>
+    </repository>
+  </distributionManagement>
+</project>

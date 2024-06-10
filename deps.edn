@@ -24,4 +24,14 @@
    :extra-deps {jmh-clojure/task {:mvn/version "0.1.1"}
                 hiccup/hiccup    {:mvn/version "2.0.0-RC3"}}
    :ns-default jmh.task
-   :exec-fn jmh.task/run}}}
+   :exec-fn jmh.task/run}
+
+  :uberjar
+  {:extra-deps {uberdeps/uberdeps {:mvn/version "1.3.0"}}
+   :main-opts  ["-m"           "uberdeps.uberjar"
+                "--main-class" "clj-fast-html.core"]}
+
+  :deploy
+  {:extra-deps {slipset/deps-deploy {:mvn/version "0.2.2"}}
+   :main-opts  ["-m"     "deps-deploy.deps-deploy"
+                "deploy" "target/clj-fast-html.jar"]}}}

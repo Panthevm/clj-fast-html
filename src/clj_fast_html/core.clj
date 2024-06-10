@@ -1,4 +1,5 @@
 (ns clj-fast-html.core
+  (:gen-class)
   (:import
    (java.lang StringBuilder Iterable)
    (java.util Iterator HashSet)
@@ -257,16 +258,3 @@
   (let [builder (StringBuilder.)]
     (write-node node builder)
     (.toString builder)))
-
-
-(comment
-  (require 'clj-async-profiler.core)
-  (def data
-    )
-  (clj-async-profiler.core/serve-ui 8888)
-  (clj-async-profiler.core/profile
-   (dotimes [_ 1000000]
-     (to-html-string data))
-   )
-     
-    )

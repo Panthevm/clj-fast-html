@@ -1,2 +1,5 @@
 .cpcache
 .nrepl-port
+classes
+settings.xml
+target
