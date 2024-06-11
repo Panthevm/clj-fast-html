@@ -51,11 +51,20 @@ Here is an example of how to use clj-fast-html to generate an HTML string:
 
 # Benchmark
 The performance of clj-fast-html is benchmarked against other popular HTML generation libraries. Below are the benchmark results for generating the [Clojure home page](https://clojure.org/)
+
+#### Single Thread
 | Library                | Average (ns)     | %        |
 |------------------------|------------------|----------|
 | clj-fast-html (latest) | 39434.940 ns/op  | 0%       |
 | Hiccup (2.0.0-RC3)     | 306147.614 ns/op | 676.34%  |
 | Hiccup (2.0.0-RC1)     | 666406.325 ns/op | 1589.89% |
+
+#### Multithread
+| Library                | Average (μs)     | %        |
+|------------------------|------------------|----------|
+| clj-fast-html (latest) | 176.198   μs/op  | 0%       |
+| Hiccup (2.0.0-RC3)     | 1332.627  μs/op  | 656.32%  |
+| Hiccup (2.0.0-RC1)     | 2041.248  μs/op  | 1589.89% |
 
 To run the benchmark yourself, use the following command:
 ``` bash
