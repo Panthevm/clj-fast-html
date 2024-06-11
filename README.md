@@ -20,12 +20,33 @@ Here is an example of how to use clj-fast-html to generate an HTML string:
     [:p {:class ["class3" "class4"]} "text"]
     [:p {:class "class3 class4"} "text"]
     [:dialog {:open true} "text"]
+    [:span {:href (clj-fast-html.core/escape "' onmouseover='alert(1)")}]
+    [:span (clj-fast-html.core/escape "<p onmouseover='alert(1)'></p>")]
     (mapv
      (fn [x]
        [:span x])
-     [1 2 3 4])]]]) 
-
-"<!DOCTYPE html><html><head><title>Title</title></head><body><h1 id='id' class='class1 class2'>Header</h1><p style='color:red'>text</p><p class='class3 class4'>text</p><p class='class3 class4'>text</p><dialog open>text</dialog><span>1</span><span>2</span><span>3</span><span>4</span></body></html>"
+     [1 2 3 4])]]])
+```
+``` html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+  </head>
+  <body>
+    <h1 id="id" class="class1 class2">Header</h1>
+    <p style="color: red">text</p>
+    <p class="class3 class4">text</p>
+    <p class="class3 class4">text</p>
+    <dialog open>text</dialog>
+    <span href="&#39; onmouseover=&#39;alert(1)"></span>
+    <span>&lt;p onmouseover=&#39;alert(1)&#39;&gt;&lt;/p&gt;</span>
+    <span>1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+  </body>
+</html>
 ```
 
 # Benchmark
