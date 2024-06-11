@@ -64,7 +64,7 @@ The performance of clj-fast-html is benchmarked against other popular HTML gener
 |------------------------|------------------|----------|
 | clj-fast-html (latest) | 176.198   μs/op  | 0%       |
 | Hiccup (2.0.0-RC3)     | 1332.627  μs/op  | 656.32%  |
-| Hiccup (2.0.0-RC1)     | 2041.248  μs/op  | 1589.89% |
+| Hiccup (2.0.0-RC1)     | 2041.248  μs/op  | 1058.5%  |
 
 To run the benchmark yourself, use the following command:
 ``` bash
