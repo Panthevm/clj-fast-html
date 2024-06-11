@@ -35,7 +35,7 @@ Here is an example of how to use clj-fast-html to generate an HTML string:
   </head>
   <body>
     <h1 id="id" class="class1 class2">Header</h1>
-    <p style="color: red">text</p>
+    <p style="color:red">text</p>
     <p class="class3 class4">text</p>
     <p class="class3 class4">text</p>
     <dialog open>text</dialog>
