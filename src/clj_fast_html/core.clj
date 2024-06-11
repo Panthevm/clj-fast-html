@@ -33,7 +33,6 @@
 (def ^:const ^HashSet unclosed-tags
   (HashSet. #{"area" "base" "br" "col" "embed" "hr" "img" "input" "link" "meta" "param" "source" "track" "wbr"}))
 
-
 (defprotocol NodeWriter
   "Writing an HTML element and its contents to an appender."
   (write-node [node ^StringBuilder appender]))
@@ -43,6 +42,15 @@
   (write-attribute
     [attribute-value ^String attribute-name ^StringBuilder appender]
     [attribute-value ^String attribute-name ^StringBuilder appender ^String additional]))
+
+(defn escape [^String value]
+  (when value
+    (-> value
+        (.replace "&" "&amp;")
+        (.replace "<" "&lt;")
+        (.replace ">" "&gt;")
+        (.replace "\"" "&quot;")
+        (.replace "'" "&#39;"))))
 
 (defn get-element-tag-id-index
   [^String element-tag]
@@ -194,7 +202,8 @@
   [^StringBuilder appender ^Iterator element-iterator ^Keyword tag]
   (if (identical? tag :html/raw)
     (when (.hasNext element-iterator)
-      (.append appender ^String (.next element-iterator)))
+      (when-let [value (.next element-iterator)]
+        (.append appender ^String value)))
     (let [tag-string      (.getName tag)
           tag-id-index    (get-element-tag-id-index tag-string)
           tag-class-index (get-element-tag-class-index tag-string)

@@ -10,6 +10,11 @@
      (match result# ~pattern)
      result#))
 
+(deftest escape-test
+  (match
+   (sut/escape "&<>\"'")
+   "&amp;&lt;&gt;&quot;&#39;"))
+
 (deftest content-test
   (testing "Null"
     (match! nil ""))
