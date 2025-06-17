@@ -1,0 +1,28 @@
+<svg width="620" height="320" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bar { fill: #69b3a2; }
+    .bar2 { fill: #404080; }
+    text { font-family: sans-serif; font-size: 12px; }
+  </style>
+  <!-- Single Thread -->
+  <text x="20" y="20">Single Thread (μs)</text>
+  <g transform="translate(0,280)">
+    <rect class="bar" x="50" width="40" y="-14.79" height="14.79"/>
+    <rect class="bar" x="120" width="40" y="-114.85" height="114.85"/>
+    <rect class="bar" x="190" width="40" y="-250" height="250"/>
+    <text x="50" y="15" transform="rotate(45 50,15)" >clj-fast-html</text>
+    <text x="120" y="15" transform="rotate(45 120,15)" >hiccup RC3</text>
+    <text x="190" y="15" transform="rotate(45 190,15)" >hiccup RC1</text>
+  </g>
+
+  <!-- Multithread -->
+  <text x="320" y="20">Multithread (μs)</text>
+  <g transform="translate(270,280)">
+    <rect class="bar2" x="50" width="40" y="-21.58" height="21.58"/>
+    <rect class="bar2" x="120" width="40" y="-163.21" height="163.21"/>
+    <rect class="bar2" x="190" width="40" y="-250" height="250"/>
+    <text x="50" y="15" transform="rotate(45 50,15)" >clj-fast-html</text>
+    <text x="120" y="15" transform="rotate(45 120,15)" >hiccup RC3</text>
+    <text x="190" y="15" transform="rotate(45 190,15)" >hiccup RC1</text>
+  </g>
+</svg>
