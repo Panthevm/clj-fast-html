@@ -1,31 +1,42 @@
 # clj-fast-html
 
-`clj-fast-html` is a Clojure library designed for fast and efficient HTML generation.
+A fast HTML generation library for Clojure that compiles a Hiccup style data structure into plain HTML strings.
+
+## Features
+
+- Small and dependency free runtime
+- Protocol based implementation for high performance
+- Compatible with Clojure on the JVM
 
 ## Installation
 
-You can find the latest release on Clojars.
+The library is available on [Clojars](https://clojars.org/io.github.panthevm/clj-fast-html).
 
-[![Clojars Project](http://clojars.org/io.github.panthevm/clj-fast-html/latest-version.svg)](https://clojars.org/io.github.panthevm/clj-fast-html)
-
-Add the dependency to your `deps.edn` file:
+Add the dependency to your **deps.edn** file:
 
 ```clojure
 io.github.panthevm/clj-fast-html {:mvn/version "<latest-version>"}
 ```
 
+or with Maven:
+
+```xml
+<dependency>
+  <groupId>io.github.panthevm</groupId>
+  <artifactId>clj-fast-html</artifactId>
+  <version><!-- latest version --></version>
+</dependency>
+```
+
 ## Usage
 
-### Example
-
-Here is an example of how to generate an HTML string:
+The API accepts a vector based description of HTML similar to Hiccup and returns the resulting HTML string.
 
 ```clj
 (clj-fast-html.core/to-html-string
  [[:html/raw "<!DOCTYPE html>"]
   [:html
-   [:head
-    [:title "Title"]]
+   [:head [:title "Title"]]
    [:body
     [:h1#id.class1.class2 "Header"]
     [:p {:style {:color "red"}} "text"]
@@ -34,11 +45,10 @@ Here is an example of how to generate an HTML string:
     [:dialog {:open true} "text"]
     [:span {:href (clj-fast-html.core/escape "' onmouseover='alert(1)")}]
     [:span (clj-fast-html.core/escape "<p onmouseover='alert(1)'></p>")]
-    (mapv
-     (fn [x]
-       [:span x])
-     [1 2 3 4])]])
+    (mapv (fn [x] [:span x]) [1 2 3 4])]])
 ```
+
+The call above produces the following HTML:
 
 ```html
 <!DOCTYPE html>
@@ -64,16 +74,16 @@ Here is an example of how to generate an HTML string:
 
 ## Benchmark
 
-The performance of `clj-fast-html` is benchmarked against other popular HTML generation libraries. Below are the benchmark results for generating the [Clojure home page](https://clojure.org/).
+The library includes JMH benchmarks. Results for rendering the [Clojure home page](https://clojure.org/) on a single thread are shown below.
 
-#### Single Thread
 | Library                | Average (ns)     | %        |
 |------------------------|------------------|----------|
 | clj-fast-html (latest) | 39434.940 ns/op  | 0%       |
 | Hiccup (2.0.0-RC3)     | 306147.614 ns/op | 676.34%  |
 | Hiccup (2.0.0-RC1)     | 666406.325 ns/op | 1589.89% |
 
-#### Multithread
+For a multithreaded run:
+
 | Library                | Average (μs)     | %        |
 |------------------------|------------------|----------|
 | clj-fast-html (latest) | 176.198   μs/op  | 0%       |
@@ -82,9 +92,12 @@ The performance of `clj-fast-html` is benchmarked against other popular HTML gen
 
 ![Benchmark Graph](images/benchmark_graph.svg)
 
-To run the benchmark yourself, use the following command:
+Run the benchmarks locally with:
 
 ```bash
 make bench
 ```
 
+## License
+
+Distributed under the [MIT License](https://mit-license.org/).
