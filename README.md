@@ -1,14 +1,26 @@
 # clj-fast-html
-clj-fast-html is a Clojure library designed for fast and efficient HTML generation.
 
-# Usage
-You can find the latest version on Clojars:
+`clj-fast-html` is a Clojure library designed for fast and efficient HTML generation.
 
-[![Clojars Project](http://clojars.org/io.github.panthevm/clj-fast-html/latest-version.svg)](https://clojars.org/io.github.panthevm/clj-fast-html) <br>
+## Installation
 
-## Example:
-Here is an example of how to use clj-fast-html to generate an HTML string:
-``` clj
+You can find the latest release on Clojars.
+
+[![Clojars Project](http://clojars.org/io.github.panthevm/clj-fast-html/latest-version.svg)](https://clojars.org/io.github.panthevm/clj-fast-html)
+
+Add the dependency to your `deps.edn` file:
+
+```clojure
+io.github.panthevm/clj-fast-html {:mvn/version "<latest-version>"}
+```
+
+## Usage
+
+### Example
+
+Here is an example of how to generate an HTML string:
+
+```clj
 (clj-fast-html.core/to-html-string
  [[:html/raw "<!DOCTYPE html>"]
   [:html
@@ -25,9 +37,10 @@ Here is an example of how to use clj-fast-html to generate an HTML string:
     (mapv
      (fn [x]
        [:span x])
-     [1 2 3 4])]]])
+     [1 2 3 4])]])
 ```
-``` html
+
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -49,8 +62,9 @@ Here is an example of how to use clj-fast-html to generate an HTML string:
 </html>
 ```
 
-# Benchmark
-The performance of clj-fast-html is benchmarked against other popular HTML generation libraries. Below are the benchmark results for generating the [Clojure home page](https://clojure.org/)
+## Benchmark
+
+The performance of `clj-fast-html` is benchmarked against other popular HTML generation libraries. Below are the benchmark results for generating the [Clojure home page](https://clojure.org/).
 
 #### Single Thread
 | Library                | Average (ns)     | %        |
@@ -67,6 +81,8 @@ The performance of clj-fast-html is benchmarked against other popular HTML gener
 | Hiccup (2.0.0-RC1)     | 2041.248  μs/op  | 1058.5%  |
 
 To run the benchmark yourself, use the following command:
-``` bash
+
+```bash
 make bench
 ```
+
