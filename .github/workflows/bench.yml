@@ -1,0 +1,35 @@
+name: Benchmark
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: DeLaGuardo/setup-clojure@12
+        with:
+          tools-deps: '1.11.1.1413'
+      - name: Run benchmarks
+        run: |
+          clojure -X:bench '{:mode :average :warmup 2 :measurement 2 :fork 1 :threads 1 :status true :output-time-unit :us :format :table :only [:name :score] :result "docs/results.txt"}'
+      - uses: actions/upload-pages-artifact@v1
+        with:
+          path: docs
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v1

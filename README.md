@@ -92,6 +92,9 @@ For a multithreaded run:
 
 ![Benchmark Graph](images/benchmark_graph.svg)
 
+The latest benchmark results are also published automatically to
+[GitHub Pages](https://panthevm.github.io/clj-fast-html/).
+
 Run the benchmarks locally with:
 
 ```bash
