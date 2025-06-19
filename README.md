@@ -93,7 +93,9 @@ For a multithreaded run:
 ![Benchmark Graph](images/benchmark_graph.svg)
 
 The latest benchmark results are also published automatically to
-[GitHub Pages](https://panthevm.github.io/clj-fast-html/).
+[GitHub Pages](https://panthevm.github.io/clj-fast-html/),
+where interactive charts visualize the comparison with Hiccup and the
+performance of the `main` branch over time.
 
 Run the benchmarks locally with:
 

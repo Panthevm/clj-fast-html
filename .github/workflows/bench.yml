@@ -20,7 +20,13 @@ jobs:
           tools-deps: '1.11.1.1413'
       - name: Run benchmarks
         run: |
-          clojure -X:bench '{:mode :average :warmup 2 :measurement 2 :fork 1 :threads 1 :status true :output-time-unit :us :format :table :only [:name :score] :result "docs/results.txt"}'
+          clojure -X:bench '{:mode :average :warmup 2 :measurement 2 :fork 1 :threads 1 :status true :output-time-unit :us :format :json :only [:name :score] :result "docs/results.json"}'
+      - name: Update history
+        run: |
+          commit=$(git rev-parse --short HEAD)
+          score=$(jq '.multi[] | select(.name=="clj-fast-html") | .score' docs/results.json)
+          if [ ! -f docs/history.csv ]; then echo "commit,score" > docs/history.csv; fi
+          echo "$commit,$score" >> docs/history.csv
       - uses: actions/upload-pages-artifact@v1
         with:
           path: docs
