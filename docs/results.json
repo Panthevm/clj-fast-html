@@ -1,0 +1,12 @@
+{
+  "single": [
+    {"name": "clj-fast-html", "score": 39.435},
+    {"name": "hiccup RC3", "score": 306.148},
+    {"name": "hiccup RC1", "score": 666.406}
+  ],
+  "multi": [
+    {"name": "clj-fast-html", "score": 176.198},
+    {"name": "hiccup RC3", "score": 1332.627},
+    {"name": "hiccup RC1", "score": 2041.248}
+  ]
+}
